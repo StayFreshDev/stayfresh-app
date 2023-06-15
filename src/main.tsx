@@ -1,10 +1,22 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Connexion from "./components/Connexion";
+import Header from "./components/styles/organisms/Header/Header";
+import Footer from "./components/styles/organisms/Footer/Footer";
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+
+const router = createBrowserRouter([
+  { path: "/", element: <Connexion /> },
+]);
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <Header />
+      <RouterProvider router={router} />
+    <Footer />
+  </React.StrictMode>
+);
