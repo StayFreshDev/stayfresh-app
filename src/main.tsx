@@ -5,7 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Connexion from "./components/Connexion";
-import Header from "./components/styles/organisms/Header/Header";
+import Header from "./components/styles/organisms/Header";
 import Footer from "./components/styles/organisms/Footer/Footer";
 
 

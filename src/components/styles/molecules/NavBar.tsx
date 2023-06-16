@@ -8,3 +8,16 @@ export const NavBar = styled.nav`
     align-items: center;
     justify-content: space-between;
     `
+
+export const LeftNav = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 5%;`
+
+export const RightNav = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-right: 5%;`
+
