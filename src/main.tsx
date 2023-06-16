@@ -4,9 +4,9 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Connexion from "./components/Connexion";
-import Header from "./components/styles/organisms/Header";
-import Footer from "./components/styles/organisms/Footer/Footer";
+import Connexion from "../src/components/Connexion";
+import Header from "../src/components/styles/organisms/Header";
+import Footer from "../src/components/styles/organisms/Footer";
 
 
 const router = createBrowserRouter([
