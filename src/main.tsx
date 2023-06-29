@@ -4,13 +4,17 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Header from "../src/components/styles/organisms/Header";
-import Footer from "../src/components/styles/organisms/Footer";
-import Home from "./components/Home";
+import Connexion from "./components/Connexion";
+import Header from "./components/template/Header";
+import Footer from "./components/template/Footer";
+import Inscription from "./components/Inscription";
+import PageEntreprise from "./components/PageEntreprise";
 
 
 const router = createBrowserRouter([
-  { path: "/", element: <Home /> },
+  { path: "/", element: <Connexion /> },
+  { path: "/inscription", element: <Inscription /> },
+  { path: "/page-entreprise", element: <PageEntreprise />}
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

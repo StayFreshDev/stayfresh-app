@@ -1,7 +1,5 @@
-import {H1} from '../atoms/Title';
-import {A} from '../atoms/Text';
-import {LeftNav, RightNav} from '../molecules/NavBar';
-import { NavBar } from '../molecules/NavBar';
+import {H1, A} from '../styles/atoms';
+import {LeftNav, RightNav, NavBar} from '../styles/organisms';
 
 function Header() {
   return (
