@@ -13,7 +13,6 @@ function Header() {
         <RightNav>
           <A href='#'>Mes rendez-vous</A>
           <A href='#'>Type d'établissement</A>
-          <A href='#'>A propos</A>
           <A href='#'>Connexion</A>
         </RightNav>
       </NavBar>
