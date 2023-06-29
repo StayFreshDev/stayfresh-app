@@ -9,10 +9,11 @@ import Header from "./components/template/Header";
 import Footer from "./components/template/Footer";
 import Inscription from "./components/Inscription";
 import PageEntreprise from "./components/PageEntreprise";
+import Home from "./components/Home";
 
 
 const router = createBrowserRouter([
-  { path: "/", element: <Connexion /> },
+  { path: "/", element: <Home /> },
   { path: "/inscription", element: <Inscription /> },
   { path: "/page-entreprise", element: <PageEntreprise />}
 ]);

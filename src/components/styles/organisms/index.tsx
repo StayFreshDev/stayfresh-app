@@ -1,5 +1,3 @@
-import { LeftNav } from "./NavBar";
-import { RightNav } from "./NavBar";
-import { NavBar } from "./NavBar";
+import { LeftNav, RightNav, NavBar } from "./NavBar";
 
 export { LeftNav as LeftNav, RightNav as RightNav, NavBar as NavBar };

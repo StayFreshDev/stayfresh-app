@@ -1,6 +1,6 @@
+import { P_Hero } from "./styles/atoms";
 import { Button } from "./styles/atoms/Button";
-import { H3 } from "./styles/atoms/Title";
-import { Container, ContainerLeft, ContainerRight } from "./styles/organisms/Containers";
+import { ColoredContainer, Container } from "./styles/molecules";
 
 interface ContainerProps { }
 
@@ -8,14 +8,14 @@ const Home: React.FC<ContainerProps> = () => {
     return (
         <>
         <Container>
-            <ContainerLeft>
+            <ColoredContainer color="white">
                 <span>Que Recherchez-vous ?</span>
                 <input type="text" placeholder="Rechercher un soin, un praticien, un établissement..." />
                 <Button type="submit">Rechercher</Button>
-            </ContainerLeft>
-        <ContainerRight>
-            <H3 color="white">Votre Rendez-vous bien-être, en un clic !</H3>
-        </ContainerRight>
+            </ColoredContainer>
+        <ColoredContainer color="#e5c09d">
+            <P_Hero color="white">Votre Rendez-vous bien-être, en un clic !</P_Hero>
+        </ColoredContainer>
         </Container>
         
         </>
