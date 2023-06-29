@@ -15,7 +15,8 @@ import Home from "./components/Home";
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
   { path: "/inscription", element: <Inscription /> },
-  { path: "/page-entreprise", element: <PageEntreprise />}
+  { path: "/page-entreprise", element: <PageEntreprise />},
+  { path: "/connexion", element: <Connexion />}
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
