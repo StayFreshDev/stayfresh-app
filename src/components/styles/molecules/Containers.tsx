@@ -6,20 +6,14 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;`
-  
-export const ContainerLeft = styled.div`
-    background-color: #fff;
+
+export const ColoredContainer = styled.div`
+    background-color: ${props => props.color};
     width: 50%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;`
-  
-export const ContainerRight = styled.div`
-    background-color: #E5C09D;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;`
+
   
