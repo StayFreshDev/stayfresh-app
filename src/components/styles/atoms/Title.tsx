@@ -5,6 +5,10 @@ export const H1 = styled.h1`
     font-size: 2.5rem;
     font-family: 'Roboto', sans-serif;
     font-style: italic;
+
+    @media screen and (max-width: 768px) {
+        font-size: 1.5rem;
+    }
     `
 
 export const H3 = styled.h3`

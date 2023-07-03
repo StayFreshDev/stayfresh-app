@@ -10,7 +10,7 @@ import Footer from "./components/template/Footer";
 import Inscription from "./components/Inscription";
 import PageEntreprise from "./components/PageEntreprise";
 import Home from "./components/Home";
-
+import Head from "./components/template/NavBar/Head";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <Header />
+    <Head />
       <RouterProvider router={router} />
     <Footer />
   </React.StrictMode>

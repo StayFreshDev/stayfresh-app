@@ -14,7 +14,7 @@ const Connexion: React.FC<ContainerProps> = () => {
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
-    const response = await fetch('http://localhost:8080/login', {
+    const response = await fetch('http://localhost:8080/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
