@@ -16,6 +16,7 @@ export const Input = styled.input`
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
     background-color: #F9F9F9;
+    margin-bottom: 20px;
     `
 export const ColInput = styled.input`
     width:  ${props => props.width};

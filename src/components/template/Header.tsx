@@ -6,12 +6,12 @@ function Header() {
     <>
       <NavBar>
         <LeftNav>
-          <H1 color="#E5C09D" className='title'>StayFresh</H1>
+          <A href='/'><H1 color="#E5C09D" className='title'>StayFresh</H1></A>
         </LeftNav>
         <RightNav>
           <A href='#'>Mes rendez-vous</A>
-          <A href='#'>Type d'établissement</A>
-          <A href='#'>Connexion</A>
+          <A href='/establishment'>Type d'établissement</A>
+          <A href='/connexion'>Connexion</A>
         </RightNav>
       </NavBar>
     </>

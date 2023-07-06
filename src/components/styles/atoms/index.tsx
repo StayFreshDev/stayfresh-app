@@ -6,6 +6,7 @@ import { P } from './Text';
 import {Separateur} from './Separator';
 import {Line} from './Separator';
 import { ButtonBorder } from './Button';
+import { UlHome, LiHome } from './List';
 
 export {A as A };
 export {Button as Button};
@@ -15,3 +16,4 @@ export { P as P };
 export {Separateur as Separateur};
 export {Line as Line};
 export { ButtonBorder as ButtonBorder};
+export { UlHome as ulHome, LiHome as liHome};

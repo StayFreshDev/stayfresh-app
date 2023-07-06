@@ -18,3 +18,11 @@ export const P = styled.p`
     color: black;
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;`
+
+export const P_Home = styled.p`
+    color: #546A7B;
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-align: center;`
+

@@ -7,7 +7,10 @@ export const NavBar = styled.nav`
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
-    position: sticky;
+    position: fixed;
+    top: 0; 
+    z-index: 1;
+
     `    
 export const LeftNav = styled.div`
     display: flex;
