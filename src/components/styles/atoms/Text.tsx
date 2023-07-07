@@ -29,7 +29,8 @@ export const P_Hero = styled.p`
 export const P = styled.p`
     color: black;
     font-size: 1rem;
-    font-family: 'Roboto', sans-serif;`
+    font-family: 'Roboto', sans-serif;
+    margin: 2px;`
 
 export const P_Home = styled.p`
     color: #546A7B;

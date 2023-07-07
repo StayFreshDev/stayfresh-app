@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import { EstablishmentInfo } from './data/establishment';
 import { ButtonDiv, EstablishmentDivGlobal, EstablishmentInfoDiv, EstablishmentSection, ImageEstablishmentDiv, InfoEstablishment } from './styles/molecules/Section';
-import { Button, H1, P } from './styles/atoms';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { Button, H1, H2, P } from './styles/atoms';
 
 function EtablissementsListe() {
   const [etablissements, setEtablissements] = useState<EstablishmentInfo[]>([]);
@@ -29,7 +27,7 @@ function EtablissementsListe() {
                           <img src={etablissement.image} alt={etablissement.name} />
                         </ImageEstablishmentDiv>
                         <InfoEstablishment>
-                          <H1>{etablissement.name}</H1>
+                          <H2>{etablissement.name}</H2>
                           <P>{etablissement.adress_description}</P>
                           <P>{etablissement.city}</P>
                           <P>{etablissement.description}</P>

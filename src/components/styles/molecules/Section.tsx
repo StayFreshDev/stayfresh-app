@@ -13,7 +13,7 @@ export const Section = styled.section`
 export const EstablishmentSection = styled.section`
     width: 100%;
     margin-top: 2rem;
-    height: 20vh;
+    height: 30vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -32,7 +32,7 @@ export const EstablishmentInfoDiv = styled.div`
     `;
 
 export const ImageEstablishmentDiv = styled.div`
-    width: 100%;
+    width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -51,7 +51,7 @@ export const InfoEstablishment = styled.div`
     `;
 
 export const EstablishmentDivGlobal = styled.div`
-    padding: 20px;`;
+    padding: 40px;`;
 
 export const ButtonDiv = styled.div`
     display: flex;

@@ -3,7 +3,6 @@ import { Button, P_Hero, P, Separateur, Line, ButtonBorder, A } from './styles/a
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface ContainerProps { }
 
 const Connexion: React.FC<ContainerProps> = () => {
@@ -53,12 +52,8 @@ const Connexion: React.FC<ContainerProps> = () => {
           </Separateur>
           <P>Vous êtes nouveau?</P>
           <A href="/inscription"><ButtonBorder color='#fff'>Inscription</ButtonBorder></A>
-          
           <P>Vous êtes un établissement?</P>
-          <A href='/page-entreprise'>
-            <ButtonBorder color='#fff'>Cliquez ici</ButtonBorder>
-          </A>
-          
+          <A href="/page-entreprise"><ButtonBorder color='#fff'>Cliquez ici</ButtonBorder></A>
           
         </ColoredContainer>
         <ColoredContainer color='#E5C09D'>
