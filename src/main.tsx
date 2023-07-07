@@ -13,6 +13,7 @@ import EstablishmentsTypePage from "./components/EstablishmentsTypePage";
 
 import Head from "./components/template/NavBar/Head";
 import UserPage from "./components/UserPage";
+import EstablishmentList from "./components/EstablishmentList";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -20,9 +21,9 @@ const router = createBrowserRouter([
   { path: "/inscription", element: <Inscription /> },
   { path: "/connexion", element: <Connexion />},
   { path: "/page-entreprise", element: <PageEntreprise />},
-  { path: "/page-entreprise", element: <PageEntreprise />},
   { path: "/connexion", element: <Connexion />},
-  { path: "/users/:id", element: <UserPage />}
+  { path: "/users/:id", element: <UserPage />},
+  { path: "establishments-list", element: <EstablishmentList />},
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
