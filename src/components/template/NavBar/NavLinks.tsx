@@ -7,7 +7,8 @@ const NavLinks = (props: { isMobile: any; closeMobileMenu: () => any; }) => {
         <Ul>
             <Li onClick={() => props.isMobile && props.closeMobileMenu()}><A href="/connexion">Connexion</A></Li>
             <Li onClick={() => props.isMobile && props.closeMobileMenu()}><A href="/connexion">Mes rendez-vous</A></Li>
-            <Li onClick={() => props.isMobile && props.closeMobileMenu()}><A href="/listing-entreprise">Type d'établissement</A></Li>
+            <Li onClick={() => props.isMobile && props.closeMobileMenu()}><A href="/establishments-list">Type d'établissement</A></Li>
+            <Li onClick={() => props.isMobile && props.closeMobileMenu()}><A href="/about">Qui sommes-nous ?</A></Li>
         </Ul>
     );
 };

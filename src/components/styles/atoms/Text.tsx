@@ -16,7 +16,7 @@ export const A = styled.a`
     `
 
 export const P_Hero = styled.p`
-    color: #fff;
+    color: ${props => props.color};
     font-size: 3rem;
     padding: 5%;
     font-weight: bold;
@@ -27,11 +27,18 @@ export const P_Hero = styled.p`
     }`
 
 export const P = styled.p`
-    color: black;
+    color: ${props => props.color};
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
+    margin: 2px;`
+
+export const P_Home = styled.p`
+    color: ${props => props.color};
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
     margin: 2px;
-    
     @media screen and (max-width: 768px) {
         font-size: 1rem;
     }`
@@ -42,4 +49,4 @@ export const Label = styled.label`
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     margin-top: 10px;
-    `
+    `;

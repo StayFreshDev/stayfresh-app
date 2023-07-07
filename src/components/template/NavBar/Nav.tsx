@@ -5,9 +5,10 @@ const Nav = () => {
     return (
         <NavList>
             <Ul>
-                <Li><A href='/connexion'>Mes rendez-vous</A></Li>
-                <Li><A href='/listing-entreprise'>Type d'établissement</A></Li>
-                <Li><A href='/connexion'>Connexion</A></Li>  
+                <Li><A href='/users/12'>Mes rendez-vous</A></Li>
+                <Li><A href='/establishments-list'>Type d'établissement</A></Li>
+                <Li><A href='/about'>Qui sommes-nous ?</A></Li>
+                <Li><A href='/connexion'>Connexion</A></Li>
             </Ul>
         </NavList>
     );

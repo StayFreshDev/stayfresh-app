@@ -1,5 +1,5 @@
 import { ColoredContainer, Container, Form, Input } from './styles/molecules';
-import { Button, P_Hero, P, Separateur, Line, ButtonBorder } from './styles/atoms';
+import { Button, P_Hero, P, Separateur, Line, ButtonBorder, A } from './styles/atoms';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -43,7 +43,7 @@ const Connexion: React.FC<ContainerProps> = () => {
           <Form onSubmit={handleSubmit}>
             <Input type="text" name="email" id="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
             <Input type="password" name="password" id="password" placeholder='Mot de passe' value={password} onChange={(e) => setPassword(e.target.value)} />
-            <Button type="submit" color='#546A7B'>Connexion</Button>
+            <Button customAttribute='' type="submit" color='#546A7B'>Connexion</Button>
           </Form>
           <Separateur>
             <Line />
@@ -51,13 +51,13 @@ const Connexion: React.FC<ContainerProps> = () => {
             <Line />
           </Separateur>
           <P>Vous êtes nouveau?</P>
-          <ButtonBorder color='#fff'>Inscription</ButtonBorder>
+          <A href="/inscription"><ButtonBorder color='#fff'>Inscription</ButtonBorder></A>
           <P>Vous êtes un établissement?</P>
-          <ButtonBorder color='#fff'>Cliquez ici</ButtonBorder>
+          <A href="/page-entreprise"><ButtonBorder color='#fff'>Cliquez ici</ButtonBorder></A>
           
         </ColoredContainer>
         <ColoredContainer color='#E5C09D'>
-          <P_Hero>Votre rendez-vous bien-être, en un clic</P_Hero>
+          <P_Hero color='white'>Votre rendez-vous bien-être, en un clic</P_Hero>
         </ColoredContainer>
     </Container>
       

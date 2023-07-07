@@ -11,7 +11,7 @@ const PageEntreprise: React.FC<ContainerProps> = () => {
           <Form action="">
             <Input type="text" name="email" id="email" placeholder='Email'></Input>
             <Input type="password" name="password" id="password" placeholder='Mot de passe'></Input>
-            <Button color='#546A7B'>Connexion</Button>
+            <Button customAttribute='' color='#546A7B'>Connexion</Button>
           </Form>
         </ColoredContainer>
 
@@ -42,7 +42,7 @@ const PageEntreprise: React.FC<ContainerProps> = () => {
                   <option value="option3">Option 3</option>
                   <option value="option4">Option 4</option>
                 </Select>
-                <Button color='#546A7B'>Inscription</Button>
+                <Button customAttribute='' color='#546A7B'>Inscription</Button>
             </Form>
         </ColoredContainer>
     </Container>
