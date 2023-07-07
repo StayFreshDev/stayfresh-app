@@ -57,7 +57,7 @@ const Connexion: React.FC<ContainerProps> = () => {
           
         </ColoredContainer>
         <ColoredContainer color='#E5C09D'>
-          <P_Hero>Votre rendez-vous bien-être, en un clic</P_Hero>
+          <P_Hero color='white'>Votre rendez-vous bien-être, en un clic</P_Hero>
         </ColoredContainer>
     </Container>
       
