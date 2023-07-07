@@ -17,7 +17,7 @@ export const Button = styled.button<CustomComponentProps>`
     right: ${customAttribute=>customAttribute.customAttribute ==  'absolute' ? '50%' : ''};
     transform: ${customAttribute=>customAttribute.customAttribute ==  'absolute' ? 'translate(50%, 0)' : ''};`
 
-    export const ButtonBorder = styled.button`
+export const ButtonBorder = styled.button`
     background-color: ${props=>props.color};
     border-radius: 10px;
     border: none;
@@ -29,16 +29,14 @@ export const Button = styled.button<CustomComponentProps>`
     font-family: 'Roboto', sans-serif;
     margin-bottom: 20px;`
 
-export const ArrowButton = styled.button`
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #333;
-    color: #fff;
+export const LogoutButton = styled.button`
+    background-color: #A60606;
+    border-radius: 10px;
     border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    `
+    color: #fff; 
+    font-weight: bold;
+    padding: 10px 60px 10px 60px;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 60px;`
 

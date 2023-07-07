@@ -6,7 +6,12 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    position: relative;`
+    position: relative;
+    
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+    }
+    `
 
 export const ColoredContainer = styled.div`
     background-color: ${props => props.color};
@@ -23,8 +28,21 @@ export const HomeContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;`
+    align-items: center;
     
-
-
+    @media (max-width: 768px) {
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    `
+export const List = styled.div`
+    padding-top: 40px;
+    width: 50%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: ${props => props.color};
+    `
   
