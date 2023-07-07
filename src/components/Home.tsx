@@ -2,7 +2,7 @@ import { P, P_Hero,  } from "./styles/atoms";
 import { Button } from "./styles/atoms/Button";
 import { ColoredContainer, Container, Input } from "./styles/molecules";
 import { useState, useEffect } from "react";
-import { Section } from "./styles/molecules/Section";
+import { HomeSection, ImgDiv, Section } from "./styles/molecules/Section";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 import '../components/styles/styles.css' // Import Swiper styles
+import { P_Home } from "./styles/atoms/Text";
 
 interface ContainerProps { }
 
@@ -86,7 +87,16 @@ const Home: React.FC<ContainerProps> = () => {
       </Swiper>
         </Section>
         <Section color="#e5c09d">
-           Test2
+            <HomeSection>
+                <img src="/img/salon_home.jpg" alt="logo" />
+                <P_Home color="white">StayFresh est une plateforme de réservation de soins bien-être en ligne. Elle permet de mettre en relation les particuliers et les professionnels du bien-être.</P_Home>
+            </HomeSection>
+        </Section>
+        <Section color="white">
+            <HomeSection>
+                <P_Home color="black">Il vous suffit de prendre rendez-vous avec votre compte et celui-ci sera directement pris en compte par le professionnel concerné</P_Home>
+                <img src="/img/cuttin_hair.jpg" alt="logo" />
+            </HomeSection>
         </Section>
     </>
     );

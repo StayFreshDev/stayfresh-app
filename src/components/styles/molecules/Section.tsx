@@ -60,3 +60,19 @@ export const ButtonDiv = styled.div`
     align-items: center;
     margin-right: 2rem;
     `;
+
+export const HomeSection = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    img {
+        width: 40%;
+        height: 60%;
+        object-fit: cover;
+        border-radius: 4rem;
+    }
+    `;
