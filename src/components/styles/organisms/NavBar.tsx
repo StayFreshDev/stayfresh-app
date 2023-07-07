@@ -30,6 +30,7 @@ export const RightNav = styled.div`
 
     @media screen and (max-width: 768px) {
         opacity: 1;
+    }
     `
 
 export const NavList = styled.nav`
@@ -59,6 +60,7 @@ export const Ul = styled.ul`
         padding: 0px;
         transition: all 0.5s ease;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    }
 `
 
 export const Li = styled.li`

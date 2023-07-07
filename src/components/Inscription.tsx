@@ -47,7 +47,7 @@ const Inscription: React.FC<ContainerProps> = () => {
                 <Input type="text" name="telephone" id="telephone" placeholder='Téléphone' value={phone} onChange={(e) => setPhone(e.target.value)} />
                 <Input type="text" name="email" id="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
                 <Input type="password" name="password" id="password" placeholder='Mot de passe' value={password} onChange={(e) => setPassword(e.target.value)} />
-                <Button type="submit" color='#546A7B'>Inscription</Button>
+                <Button customAttribute='' type="submit" color='#546A7B'>Inscription</Button>
             </Form>
 
         </ColoredContainer>

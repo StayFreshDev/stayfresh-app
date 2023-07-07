@@ -1,6 +1,9 @@
 import styled from 'styled-components';
+interface CustomComponentProps {
+    customAttribute: string;
+}
 
-export const Button = styled.button`
+export const Button = styled.button<CustomComponentProps>`
     background-color: ${props=>props.color};
     border-radius: 10px;
     border: none;

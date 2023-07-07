@@ -9,15 +9,19 @@ import Footer from "./components/template/Footer";
 import Inscription from "./components/Inscription";
 import PageEntreprise from "./components/PageEntreprise";
 import Home from "./components/Home";
+
 import Head from "./components/template/NavBar/Head";
 import UserPage from "./components/UserPage";
+import EstablishmentList from "./components/EstablishmentList";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
   { path: "/inscription", element: <Inscription /> },
+  { path: "/connexion", element: <Connexion />},
   { path: "/page-entreprise", element: <PageEntreprise />},
   { path: "/connexion", element: <Connexion />},
-  { path: "/users/:id", element: <UserPage />}
+  { path: "/users/:id", element: <UserPage />},
+  { path: "establishments-list", element: <EstablishmentList />},
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

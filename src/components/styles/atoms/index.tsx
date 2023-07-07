@@ -1,7 +1,14 @@
-import {A, P, P_Hero, Label} from './Text';
-import {Button, ButtonBorder, LogoutButton} from './Button';
+import {A} from './Text';
+import {Button, LogoutButton} from './Button';
+import { P_Hero, Label } from './Text';
 import { H1, H2, H3 } from './Title';
-import {Separateur, Espaceur, Line} from './Separator';
+import { P } from './Text';
+import {Espaceur, Separateur} from './Separator';
+import {Line} from './Separator';
+import { ButtonBorder } from './Button';
+import { UlHome, LiHome } from './List';
+
+export { UlHome as ulHome, LiHome as liHome};
 
 export {A as A, P_Hero as P_Hero, P as P, Label as Label };
 export {LogoutButton as LogoutButton, Button as Button, ButtonBorder as ButtonBorder};

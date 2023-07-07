@@ -29,9 +29,15 @@ export const P_Hero = styled.p`
 export const P = styled.p`
     color: black;
     font-size: 1rem;
+    font-family: 'Roboto', sans-serif;`
+
+export const P_Home = styled.p`
+    color: #546A7B;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
     font-family: 'Roboto', sans-serif;
     margin: 2px;
-    
     @media screen and (max-width: 768px) {
         font-size: 1rem;
     }`

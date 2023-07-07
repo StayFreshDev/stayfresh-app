@@ -24,6 +24,7 @@ export const Input = styled.input`
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
     background-color: #F9F9F9;
+    margin-bottom: 20px;
 
     @media screen and (max-width: 768px) {
         width: 300px;
