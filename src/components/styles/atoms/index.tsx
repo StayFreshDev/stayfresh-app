@@ -1,17 +1,9 @@
-import {A} from './Text';
-import {Button} from './Button';
-import { P_Hero } from './Text';
-import { H1 } from './Title';
-import { P } from './Text';
-import {Separateur} from './Separator';
-import {Line} from './Separator';
-import { ButtonBorder } from './Button';
+import {A, P, P_Hero, Label} from './Text';
+import {Button, ButtonBorder, LogoutButton} from './Button';
+import { H1, H2, H3 } from './Title';
+import {Separateur, Espaceur, Line} from './Separator';
 
-export {A as A };
-export {Button as Button};
-export { P_Hero as P_Hero };
-export { H1 as H1 };
-export { P as P };
-export {Separateur as Separateur};
-export {Line as Line};
-export { ButtonBorder as ButtonBorder};
+export {A as A, P_Hero as P_Hero, P as P, Label as Label };
+export {LogoutButton as LogoutButton, Button as Button, ButtonBorder as ButtonBorder};
+export { H1 as H1, H2 as H2, H3 as H3 };
+export {Espaceur as Espaceur, Separateur as Separateur, Line as Line};

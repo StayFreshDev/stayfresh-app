@@ -1,17 +1,49 @@
 import { ColoredContainer, Container, Form, Input } from './styles/molecules';
 import { Button, P_Hero, P, Separateur, Line, ButtonBorder } from './styles/atoms';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 interface ContainerProps { }
 
 const Connexion: React.FC<ContainerProps> = () => {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+
+    const response = await fetch('http://localhost:8080/users/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email, password })
+    });
+
+    if (response.ok) {
+      console.log('Connexion réussie');
+      // Rediriger l'utilisateur vers la page d'accueil
+      navigate('/');
+    } else {
+      const responseObject = await response.json();
+      console.log('Erreur lors de la connexion:', responseObject.message);
+      // Gérer les erreurs
+    }
+
+  };
+
+
   return (
     <>
     <Container>
         <ColoredContainer color='#fff'>
           <P>Vous êtes un déjà inscrit?</P>
-          <Form action="">
-            <Input type="text" name="email" id="email" placeholder='Email'></Input>
-            <Input type="password" name="password" id="password" placeholder='Mot de passe'></Input>
-            <Button color='#546A7B'>Connexion</Button>
+          <Form onSubmit={handleSubmit}>
+            <Input type="text" name="email" id="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
+            <Input type="password" name="password" id="password" placeholder='Mot de passe' value={password} onChange={(e) => setPassword(e.target.value)} />
+            <Button type="submit" color='#546A7B'>Connexion</Button>
           </Form>
           <Separateur>
             <Line />
