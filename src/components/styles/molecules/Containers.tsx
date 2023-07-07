@@ -9,6 +9,7 @@ export const Container = styled.div`
     
     @media (max-width: 768px) {
         flex-direction: column-reverse;
+    }
         `
 
 export const ColoredContainer = styled.div`
@@ -23,6 +24,7 @@ export const ColoredContainer = styled.div`
     @media (max-width: 768px) {
         width: 100%;
         padding-bottom: 20px;
+    }
     `
 export const List = styled.div`
     padding-top: 40px;
