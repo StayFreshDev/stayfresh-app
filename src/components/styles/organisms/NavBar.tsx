@@ -30,6 +30,7 @@ export const RightNav = styled.div`
 
     @media screen and (max-width: 768px) {
         opacity: 1;
+    }
     `
 
 export const NavList = styled.nav`
