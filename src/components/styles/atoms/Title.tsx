@@ -17,3 +17,10 @@ export const H2 = styled.h2`
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     `
+export const H3 = styled.h3`
+    color: ${props => props.color};
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-family: 'Roboto', sans-serif;
+    margin: 10px;
+    `

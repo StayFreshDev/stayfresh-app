@@ -5,9 +5,9 @@ const Nav = () => {
     return (
         <NavList>
             <Ul>
-                <Li><A href="#">Mes rendez-vous</A></Li>
-                <Li><A href="#">Type d'établissement</A></Li>
-                <Li><A href="#">Connexion</A></Li>  
+                <Li><A href='/connexion'>Mes rendez-vous</A></Li>
+                <Li><A href='/listing-entreprise'>Type d'établissement</A></Li>
+                <Li><A href='/connexion'>Connexion</A></Li>  
             </Ul>
         </NavList>
     );

@@ -11,6 +11,7 @@ export const Card = styled.div`
     justify-content: center;
     gap: 20px;
     padding: 10px;
+    margin-bottom: 20px;
     `
 export const Left = styled.div`
     width: 100%;
@@ -19,13 +20,13 @@ export const Left = styled.div`
     flex-direction: row;
     align-items: left;
     justify-content: left;
-    border-radius: 40px;
+    border-radius: 30px;
     `
 export const Right = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     `
@@ -33,13 +34,5 @@ export const Image = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 40px;
+    border-radius: 30px;
     `
-export const Text = styled.p`
-    color: black;
-    font-size: 1rem;
-    font-family: 'Roboto', sans-serif;
-    
-    @media screen and (max-width: 768px) {
-        font-size: 1rem;
-    }`

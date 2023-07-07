@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-import { Card, Text, ColoredContainer, Container, Form, Image, Input, Left, Right, UserForm } from './styles/molecules';
-import { Button, Espaceur, Label, P } from './styles/atoms';
-import { H2 } from './styles/atoms/Title';
+import { Card, Container, Image, Input, Left, Right, UserForm, List } from './styles/molecules';
+import { Espaceur, Label, LogoutButton, P } from './styles/atoms';
+import { H2, H3 } from './styles/atoms/Title';
 
 interface User {
     id: number;
@@ -36,7 +36,7 @@ const UserPage: React.FC = () => {
   return (
     <>
       <Container>
-        <ColoredContainer color="#fff">
+        <List color="#fff">
           <H2>Mon compte</H2>
           {user ? (
             <UserForm>
@@ -53,23 +53,57 @@ const UserPage: React.FC = () => {
           ) : (
             <div>Chargement...</div>
           )}
-        </ColoredContainer>
+          <LogoutButton>Déconnexion</LogoutButton>
+        </List>
 
-        <ColoredContainer color="#E5C09D">
+       
+        <List color='#E5C09D'>
           <H2>Mes rendez-vous</H2>
           <Card>
             <Left>
               <Image src="../src/assets/ryanhair.jpg" alt="Photo de profil" />
             </Left>
             <Right>
-              <H2>Coiffeur</H2>
-
-              
-
-
+              <H3>Ryan Hair</H3>
+              <P>1 rue Garibaldi, 69007 Lyon</P>
+              <P>3,5/5</P>
+              <P>14h - 14h30</P>
             </Right>
           </Card>
-        </ColoredContainer>
+          <Card>
+            <Left>
+              <Image src="../src/assets/ryanhair.jpg" alt="Photo de profil" />
+            </Left>
+            <Right>
+              <H3>Ryan Hair</H3>
+              <P>1 rue Garibaldi, 69007 Lyon</P>
+              <P>3,5/5</P>
+              <P>14h - 14h30</P>
+            </Right>
+          </Card>
+          <Card>
+            <Left>
+              <Image src="../src/assets/ryanhair.jpg" alt="Photo de profil" />
+            </Left>
+            <Right>
+              <H3>Ryan Hair</H3>
+              <P>1 rue Garibaldi, 69007 Lyon</P>
+              <P>3,5/5</P>
+              <P>14h - 14h30</P>
+            </Right>
+          </Card>
+          <Card>
+            <Left>
+              <Image src="../src/assets/ryanhair.jpg" alt="Photo de profil" />
+            </Left>
+            <Right>
+              <H3>Ryan Hair</H3>
+              <P>1 rue Garibaldi, 69007 Lyon</P>
+              <P>3,5/5</P>
+              <P>14h - 14h30</P>
+            </Right>
+          </Card>
+        </List>
       </Container>
     </>
   );

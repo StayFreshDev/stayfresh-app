@@ -30,6 +30,7 @@ export const P = styled.p`
     color: black;
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
+    margin: 2px;
     
     @media screen and (max-width: 768px) {
         font-size: 1rem;

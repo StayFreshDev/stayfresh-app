@@ -24,5 +24,14 @@ export const ColoredContainer = styled.div`
         width: 100%;
         padding-bottom: 20px;
     `
-
+export const List = styled.div`
+    padding-top: 40px;
+    width: 50%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: ${props => props.color};
+    `
   
