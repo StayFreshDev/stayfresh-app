@@ -7,6 +7,14 @@ export const Form = styled.form`
     justify-content: center;
     gap: 20px;
     `
+export const UserForm = styled.form`
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 20px;
+    `
+
 export const Input = styled.input`
     width: 420px;
     height: 30px;
@@ -16,6 +24,9 @@ export const Input = styled.input`
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
     background-color: #F9F9F9;
+
+    @media screen and (max-width: 768px) {
+        width: 300px;
     `
 export const ColInput = styled.input`
     width:  ${props => props.width};
@@ -26,6 +37,9 @@ export const ColInput = styled.input`
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
     background-color: #F9F9F9;
+
+    @media screen and (max-width: 768px) {
+        width: 135px;
     `
 export const ColDiv = styled.div`
     display: flex;

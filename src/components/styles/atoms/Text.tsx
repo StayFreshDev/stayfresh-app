@@ -23,7 +23,7 @@ export const P_Hero = styled.p`
     font-family: 'Roboto', sans-serif;
 
     @media screen and (max-width: 768px) {
-        font-size: 0.8rem;
+        font-size: 1.5rem;
     }`
 
 export const P = styled.p`
@@ -32,5 +32,13 @@ export const P = styled.p`
     font-family: 'Roboto', sans-serif;
     
     @media screen and (max-width: 768px) {
-        font-size: 0.8rem;
+        font-size: 1rem;
     }`
+
+export const Label = styled.label`
+    color: black;
+    font-size: 0.8rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 10px;
+    `

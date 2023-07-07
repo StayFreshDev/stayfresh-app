@@ -9,7 +9,6 @@ interface ContainerProps { }
 
 const Head: React.FC<ContainerProps> = () => {
     return <>
-    
         <NavBar>
             <LeftNav>
                 <H1 color="#E5C09D">StayFresh</H1>

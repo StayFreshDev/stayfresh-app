@@ -63,10 +63,10 @@ export const Ul = styled.ul`
 
 export const Li = styled.li`
     list-style: none;
-    padding-right: 10px;
+    padding-right: 30px;
 
     @media screen and (max-width: 768px) {
-        padding: 1rem 0;
+        padding: 1rem;
     }
 `
 export const MobilNav = styled.nav`

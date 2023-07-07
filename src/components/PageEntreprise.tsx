@@ -19,13 +19,14 @@ const PageEntreprise: React.FC<ContainerProps> = () => {
             <P>Incrivez votre entreprise </P>
             <Form action="">
                 <ColDiv>
-                    <ColInput type="text" name="nom" id="nom" placeholder='Nom'></ColInput>
+                    <ColInput type="text" name="nom" id="nom" placeholder="Nom de l'établissement"></ColInput>
                     <ColInput type="text" name="email" id="email" placeholder='Email'></ColInput>
                 </ColDiv>
                 <ColDiv>
                     <ColInput type="text" name="telephone" id="telephone" placeholder='Téléphone'></ColInput>
                     <ColInput type="text" name="siret" id="siret" placeholder='N° Siret'></ColInput>
                 </ColDiv>
+                <Input type="text" name="password" id="password" placeholder='Mot de passe'></Input>
                 <ColDiv>
                     <ColInput type="text" name="num_rue" id="num_rue" placeholder='N° de rue' width="80px"></ColInput>
                     <ColInput type="text" name="nom_rue" id="nom_rue" placeholder='Nom de rue'></ColInput>

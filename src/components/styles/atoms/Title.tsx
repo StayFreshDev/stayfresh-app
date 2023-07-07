@@ -11,9 +11,9 @@ export const H1 = styled.h1`
     }
     `
 
-export const H3 = styled.h3`
+export const H2 = styled.h2`
     color: ${props => props.color};
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     `
