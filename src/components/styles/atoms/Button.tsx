@@ -5,17 +5,13 @@ interface CustomComponentProps {
 
 export const Button = styled.button<CustomComponentProps>`
     background-color: ${props=>props.color};
-    position: ${customAttribute=>customAttribute.customAttribute ==  'absolute' ? 'absolute' : 'relative'};
     border-radius: 10px;
     border: none;
     color: #fff; 
     font-weight: bold;
     padding: 10px 60px 10px 60px;
     text-transform: uppercase;
-    font-family: 'Roboto', sans-serif;
-    bottom: ${customAttribute=>customAttribute.customAttribute ==  'absolute' ? '0' : ''};
-    right: ${customAttribute=>customAttribute.customAttribute ==  'absolute' ? '50%' : ''};
-    transform: ${customAttribute=>customAttribute.customAttribute ==  'absolute' ? 'translate(50%, 0)' : ''};`
+    font-family: 'Roboto', sans-serif;`
 
 export const ButtonBorder = styled.button`
     background-color: ${props=>props.color};

@@ -9,4 +9,5 @@ export interface EstablishmentInfo {
     "adress_description": string,
     "postal_code": number,
     "city": string
+    "image": string,
   }

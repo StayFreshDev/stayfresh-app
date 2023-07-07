@@ -9,7 +9,6 @@ import Footer from "./components/template/Footer";
 import Inscription from "./components/Inscription";
 import PageEntreprise from "./components/PageEntreprise";
 import Home from "./components/Home";
-import EstablishmentsTypePage from "./components/EstablishmentsTypePage";
 
 import Head from "./components/template/NavBar/Head";
 import UserPage from "./components/UserPage";
@@ -17,7 +16,6 @@ import EstablishmentList from "./components/EstablishmentList";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
-  { path: "/establishment", element: <EstablishmentsTypePage />},
   { path: "/inscription", element: <Inscription /> },
   { path: "/connexion", element: <Connexion />},
   { path: "/page-entreprise", element: <PageEntreprise />},
