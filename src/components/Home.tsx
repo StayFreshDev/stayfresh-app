@@ -2,7 +2,7 @@ import { P, P_Hero,  } from "./styles/atoms";
 import { Button } from "./styles/atoms/Button";
 import { ColoredContainer, Container, Input } from "./styles/molecules";
 import { useState, useEffect } from "react";
-import { HomeSection, ImgDiv, Section } from "./styles/molecules/Section";
+import { HomeSection, Section } from "./styles/molecules/Section";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
