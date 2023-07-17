@@ -20,7 +20,13 @@ export const Button = styled.button<CustomComponentProps>`
         color: black;
         border: 1px solid black; 
         transition: 0.2s;
-    }`
+    }
+    
+    @media (max-width: 768px) {
+        margin-bottom: 20px;
+    }
+
+    `
 
 export const ButtonBorder = styled.button`
     background-color: ${props=>props.color};
@@ -53,5 +59,7 @@ export const LogoutButton = styled.button`
     padding: 10px 60px 10px 60px;
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
-    margin-top: 60px;`
+    margin-top: 60px;
+    cursor: pointer;
+    margin-bottom: 40px;`
 

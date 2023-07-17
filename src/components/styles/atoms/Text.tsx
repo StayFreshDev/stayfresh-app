@@ -39,6 +39,8 @@ export const P_Home = styled.p`
     text-align: center;
     font-family: 'Roboto', sans-serif;
     margin: 2px;
+    padding: 5%;
+
     @media screen and (max-width: 768px) {
         font-size: 1rem;
     }`

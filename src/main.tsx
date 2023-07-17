@@ -20,7 +20,7 @@ const router = createBrowserRouter([
   { path: "/connexion", element: <Connexion />},
   { path: "/page-entreprise", element: <PageEntreprise />},
   { path: "/connexion", element: <Connexion />},
-  { path: "/users/:id", element: <UserPage />},
+  { path: "/user", element: <UserPage />},
   { path: "establishments-list", element: <EstablishmentList />},
 ]);
 

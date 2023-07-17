@@ -1,8 +1,8 @@
-import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-import { Card, Container, Image, Input, Left, Right, UserForm, List } from './styles/molecules';
+import { Card, Image, Input, Left, Right, UserForm, List, ContainerLong } from './styles/molecules';
 import { Espaceur, Label, LogoutButton, P } from './styles/atoms';
 import { H2, H3 } from './styles/atoms/Title';
+import { useNavigate } from 'react-router-dom';
 
 interface User {
     id: number;
@@ -14,28 +14,52 @@ interface User {
   
 
 const UserPage: React.FC = () => {
-  const { id } = useParams();
-  const [user, setUser] = useState<User | null>(null);
+    const [user, setUser] = useState<User | null>(null);
+    const navigate = useNavigate();
 
-  useEffect(() => {
-    fetch(`http://localhost:8080/users/one/${id}`)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("Erreur HTTP: " + response.status);
-        }
-        return response.json();
+    const handleLogout = () => {
+      document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      navigate('/connexion');
+      window.location.reload();
+    };
+    
+  
+    useEffect(() => {
+      const allCookies = document.cookie.split('; ');
+      const tokenCookie = allCookies.find(cookie => cookie.startsWith('token'));
+
+      let token;
+      if (tokenCookie) {
+        token = tokenCookie.split('=')[1];
+      }
+
+      if (!token) {
+        console.log("Aucun token trouvé. L'utilisateur n'est pas connecté.");
+        return;
+      }
+
+      fetch(`http://localhost:8080/users/currentUser`, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
       })
-      .then(data => {
-        setUser(data);
-      })
-      .catch(function() {
-        console.log("Erreur lors de la requête fetch.");
-      });
-  }, [id]);
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Erreur HTTP: " + response.status);
+          }
+          return response.json();
+        })
+        .then(data => {
+          setUser(data);
+        })
+        .catch(function(error) {
+          console.log("Erreur lors de la requête fetch.", error);
+        });
+    }, []);
 
   return (
     <>
-      <Container>
+      <ContainerLong>
         <List color="#fff">
           <H2>Mon compte</H2>
           {user ? (
@@ -53,7 +77,7 @@ const UserPage: React.FC = () => {
           ) : (
             <div>Chargement...</div>
           )}
-          <LogoutButton>Déconnexion</LogoutButton>
+          <LogoutButton onClick={handleLogout}>Déconnexion</LogoutButton>
         </List>
 
        
@@ -104,7 +128,7 @@ const UserPage: React.FC = () => {
             </Right>
           </Card>
         </List>
-      </Container>
+      </ContainerLong>
     </>
   );
 };
