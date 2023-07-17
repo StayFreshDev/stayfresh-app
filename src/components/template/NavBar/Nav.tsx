@@ -11,7 +11,7 @@ const Nav = () => {
 
     if (tokenCookie) {
       const token = tokenCookie.split('=')[1];
-      fetch(`http://localhost:8080/users/currentUser`, {
+      fetch(`http://51.254.118.50/users/currentUser`, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
