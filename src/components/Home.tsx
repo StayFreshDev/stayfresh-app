@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 import '../components/styles/styles.css' // Import Swiper styles
-import { P_Home } from "./styles/atoms/Text";
+import { A, P_Home } from "./styles/atoms/Text";
 
 interface ContainerProps { }
 
@@ -44,7 +44,7 @@ const Home: React.FC<ContainerProps> = () => {
                     value={search}
                     onChange={handleSearch} 
                 />
-                <Button customAttribute="relative" color='#546A7B' type="submit">Rechercher</Button>
+                <A href="/establishments-list"><Button customAttribute="relative" color='#546A7B' type="submit">Rechercher</Button></A>
             </ColoredContainer>
         <ColoredContainer color="#e5c09d">
             <P_Hero color="white">Votre Rendez-vous bien-être, en un clic !</P_Hero>

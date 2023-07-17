@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { EstablishmentInfo } from './data/establishment';
 import { ButtonDiv, EstablishmentDivGlobal, EstablishmentInfoDiv, EstablishmentSection, ImageEstablishmentDiv, InfoEstablishment } from './styles/molecules/Section';
-import { Button, H1, H2, P } from './styles/atoms';
+import { A, Button, H1, H2, P } from './styles/atoms';
 
 function EtablissementsListe() {
   const [etablissements, setEtablissements] = useState<EstablishmentInfo[]>([]);
@@ -34,7 +34,7 @@ function EtablissementsListe() {
                         </InfoEstablishment>
                       </EstablishmentInfoDiv>
                       <ButtonDiv>
-                        <Button customAttribute='' color="#546A7B">Prendre rendez-vous</Button>
+                        <A href='/users/12'><Button customAttribute='' color="#546A7B">Prendre rendez-vous</Button></A>
                       </ButtonDiv>
                     </EstablishmentSection>
                   </>

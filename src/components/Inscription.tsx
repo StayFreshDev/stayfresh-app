@@ -12,28 +12,55 @@ const Inscription: React.FC<ContainerProps> = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const [error, setError] = useState(''); 
+
+  const validateInput = () => {
+ 
+    if (!lastname || !firstname || !phone || !email || !password) {
+      return false;
+    }
+
+    const re = /\S+@\S+\.\S+/; 
+    if (!re.test(email)) {
+      return false;
+    }
+
+    return true;
+  };
 
   const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
-    const response = await fetch('http://localhost:8080/users/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ firstname, lastname, phone, email, password })
-    });
+    if (!validateInput()) {
+      setError('Les informations fournies ne sont pas valides.');
+      return;
+    }
 
-    if (response.ok) {
+    try {
+      const response = await fetch('http://localhost:8080/users/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ firstname, lastname, phone, email, password })
+      });
+
+      console.log(response.headers);
+
+      if (!response.ok) {
+        const responseObject = await response.json();
+        setError(`Erreur lors de l'inscription: ${responseObject.message}`);
+        return;
+      }
+
       console.log('Inscription réussie');
-      // Rediriger l'utilisateur vers la page de connexion
       navigate('/connexion');
-    } else {
-      const responseObject = await response.json();
-      console.log('Erreur lors de l\'inscription:', responseObject.message);
-      // Gérer les erreurs
+
+    } catch (error) {
+      setError(`Une erreur réseau est survenue: ${error}`);
     }
   };
+
   return (
     <>
     <Container>
@@ -48,13 +75,14 @@ const Inscription: React.FC<ContainerProps> = () => {
                 <Input type="text" name="email" id="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
                 <Input type="password" name="password" id="password" placeholder='Mot de passe' value={password} onChange={(e) => setPassword(e.target.value)} />
                 <Button customAttribute='' type="submit" color='#546A7B'>Inscription</Button>
+                {error && <div style={{color: 'red'}}>{error}</div>}
             </Form>
 
         </ColoredContainer>
 
 
         <ColoredContainer color='#E5C09D'>
-          <P_Hero>Votre rendez-vous bien-être, en un clic</P_Hero>
+          <P_Hero color='white'>Votre rendez-vous bien-être, en un clic</P_Hero>
         </ColoredContainer>
     </Container>
       

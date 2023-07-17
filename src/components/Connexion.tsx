@@ -10,30 +10,68 @@ const Connexion: React.FC<ContainerProps> = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const [error, setError] = useState(''); 
 
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
-    e.preventDefault();
+  
+  const validateInput = () => {
 
-    const response = await fetch('http://localhost:8080/users/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ email, password })
-    });
-
-    if (response.ok) {
-      console.log('Connexion réussie');
-      // Rediriger l'utilisateur vers la page d'accueil
-      navigate('/');
-    } else {
-      const responseObject = await response.json();
-      console.log('Erreur lors de la connexion:', responseObject.message);
-      // Gérer les erreurs
+    if (!email || !password) {
+      return false;
     }
 
+    const re = /\S+@\S+\.\S+/; 
+    if (!re.test(email)) {
+      return false;
+    }
+
+    return true;
   };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+
+    if (!validateInput()) {
+      setError('Les informations fournies ne sont pas valides.');
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:8080/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+      });
+
+      if (!response.ok) {
+        const responseObject = await response.json();
+        if (response.status === 401) {
+          setError('Mot de passe incorrect. Veuillez réessayer.');
+        } else {
+          setError(`Erreur lors de la connexion: ${responseObject.message}`);
+        }
+        return;
+      }
+
+      const data = await response.json();
+      let expiryDate = new Date();
+      expiryDate.setDate(expiryDate.getDate() + 1);
+      let expiryDateString = expiryDate.toUTCString();
+
+      // Store the token in a cookie
+      document.cookie = `token=${data.token}; expires=${expiryDateString}; path=/;`;
+
+      console.log('Connexion réussie');
+      console.log(document.cookie);
+      navigate('/user');
+      window.location.reload();
+
+    } catch (error) {
+      setError(`Une erreur réseau est survenue: ${error}`);
+    }
+  };
 
   return (
     <>
@@ -44,6 +82,7 @@ const Connexion: React.FC<ContainerProps> = () => {
             <Input type="text" name="email" id="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
             <Input type="password" name="password" id="password" placeholder='Mot de passe' value={password} onChange={(e) => setPassword(e.target.value)} />
             <Button customAttribute='' type="submit" color='#546A7B'>Connexion</Button>
+            {error && <div style={{color: 'red'}}>{error}</div>}
           </Form>
           <Separateur>
             <Line />
