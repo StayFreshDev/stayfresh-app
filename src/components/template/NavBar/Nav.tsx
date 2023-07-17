@@ -11,7 +11,7 @@ const Nav = () => {
 
     if (tokenCookie) {
       const token = tokenCookie.split('=')[1];
-      fetch(`http://51.254.118.50/users/currentUser`, {
+      fetch(`http://stayfresh.dev-ord.fr:81/users/currentUser`, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
