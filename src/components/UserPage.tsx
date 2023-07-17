@@ -38,7 +38,7 @@ const UserPage: React.FC = () => {
         return;
       }
 
-      fetch(`http://localhost:8080/users/currentUser`, {
+      fetch(`http://51.254.118.50/users/currentUser`, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },

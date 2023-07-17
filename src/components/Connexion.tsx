@@ -37,7 +37,7 @@ const Connexion: React.FC<ContainerProps> = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:8080/users/login', {
+      const response = await fetch('http://51.254.118.50/users/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -56,9 +56,9 @@ const Connexion: React.FC<ContainerProps> = () => {
       }
 
       const data = await response.json();
-      let expiryDate = new Date();
+      const expiryDate = new Date();
       expiryDate.setDate(expiryDate.getDate() + 1);
-      let expiryDateString = expiryDate.toUTCString();
+      const expiryDateString = expiryDate.toUTCString();
 
       // Store the token in a cookie
       document.cookie = `token=${data.token}; expires=${expiryDateString}; path=/;`;
