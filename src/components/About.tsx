@@ -21,7 +21,7 @@ const About: React.FC<ContainerProps> = () => {
             </AboutCard>
             <AboutCard>
                 <CardImg>
-                    <CardImage src="././src/assets/antoine.jpeg"></CardImage>
+                    <CardImage src="././src/assets/antoine.jpg"></CardImage>
                 </CardImg>
                 <CardText>
                     <H3>Antoine GUERIN</H3>
