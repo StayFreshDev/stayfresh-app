@@ -37,7 +37,7 @@ const Connexion: React.FC<ContainerProps> = () => {
     }
 
     try {
-      const response = await fetch('http://stayfresh.dev-ord.fr:81/users/login', {
+      const response = await fetch('http://51.254.118.50/users/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

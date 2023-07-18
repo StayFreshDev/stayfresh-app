@@ -37,7 +37,7 @@ const Inscription: React.FC<ContainerProps> = () => {
     }
 
     try {
-      const response = await fetch('http://stayfresh.dev-ord.fr:81/users/register', {
+      const response = await fetch('http://51.254.118.50/users/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

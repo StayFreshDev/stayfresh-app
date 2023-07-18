@@ -13,6 +13,7 @@ import Home from "./components/Home";
 import Head from "./components/template/NavBar/Head";
 import UserPage from "./components/UserPage";
 import EstablishmentList from "./components/EstablishmentList";
+import EstablishmentsDetails from "./components/EstablishmentsDetails";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
   { path: "/connexion", element: <Connexion />},
   { path: "/user", element: <UserPage />},
   { path: "establishments-list", element: <EstablishmentList />},
+  { path: "establishments/one/:id", element: <EstablishmentsDetails />}
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

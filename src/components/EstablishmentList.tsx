@@ -8,7 +8,7 @@ const EtablissementsListe: React.FC = () => {
   const [etablissements, setEtablissements] = useState<EstablishmentInfo[]>([]);
 
   useEffect(() => {
-    fetch('http://stayfresh.dev-ord.fr:81/establishments/')
+    fetch('http://51.254.118.50/establishments/')
       .then(response => response.json())
       .then(data => {
         setEtablissements(data);
@@ -19,12 +19,13 @@ const EtablissementsListe: React.FC = () => {
 
   const navigate = useNavigate();
 
-  const goToDetails = () => {
-    const url = "http://stayfresh.dev-ord.fr:81/establishments/one/1";
-    window.location.replace(url);
-    console.log("goToDetails");
+  const goToDetails = (establishmentId: number) => {
+    const selectedEstablishment = etablissements.find(etablissement => etablissement.id === establishmentId);
+    if (selectedEstablishment) {
+      navigate(`/establishments/one/${establishmentId}`, { state: selectedEstablishment });
+    }
   }
-
+  
   return (
     <>
           <EstablishmentDivGlobal>
@@ -35,7 +36,7 @@ const EtablissementsListe: React.FC = () => {
                     <EstablishmentSection key={index} color="#F4F4F4">
                       <EstablishmentInfoDiv>
                         <ImageEstablishmentDiv>
-                          {/* <img src={etablissement.image} alt={etablissement.name} /> */}
+                          <img src={etablissement.image} alt={etablissement.establishment_name} />
                         </ImageEstablishmentDiv>
                         <InfoEstablishment>
                           <H2>{etablissement.establishment_name}</H2>
@@ -44,7 +45,7 @@ const EtablissementsListe: React.FC = () => {
                         </InfoEstablishment>
                       </EstablishmentInfoDiv>
                       <ButtonDiv>
-                        <Button onClick={goToDetails} customAttribute='' color="#546A7B">Prendre rendez-vous</Button>
+                        <Button onClick={() => goToDetails(etablissement.id)} customAttribute='' color="#546A7B">Prendre rendez-vous</Button>
                       </ButtonDiv>
                     </EstablishmentSection>
                   </>
