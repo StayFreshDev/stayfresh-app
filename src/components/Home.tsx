@@ -1,6 +1,6 @@
 import { P, P_Hero,  } from "./styles/atoms";
 import { Button } from "./styles/atoms/Button";
-import { ColoredContainer, Container, Input } from "./styles/molecules";
+import { ColoredContainer, Container, Form, Input } from "./styles/molecules";
 import { useState, useEffect } from "react";
 import { HomeSection, Section } from "./styles/molecules/Section";
 import 'swiper/css';
@@ -10,53 +10,42 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 import '../components/styles/styles.css' // Import Swiper styles
-import { A, P_Home } from "./styles/atoms/Text";
+import { P_Home } from "./styles/atoms/Text";
+import { useNavigate } from 'react-router-dom';
 
 interface ContainerProps { }
 
 
 const Home: React.FC<ContainerProps> = () => {
-    const [search, setSearch] = useState<string>('');
-    const [results, setResults] = useState<any[]>([]);
-
-    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSearch(e.target.value);
-    }
-
+    const [searchValue, setSearchValue] = useState<string>("");
+    const navigate = useNavigate();
+    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchValue(e.target.value);
+    };
+    const handleSearchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        navigate(`/establishments-list?term=${encodeURIComponent(searchValue)}`);
+    };
     useEffect(() => {
-        if (search.length > 0) {
-            fetch(`https://jsonplaceholder.typicode.com/users`)
-                .then(res => res.json())
-                .then(res => {
-                    console.log(res);
-                    setResults(res.response.venues);
-                })
-        }
-    }
-    , [search]);
-
+        console.log(searchValue);
+    }, [searchValue]);
+  
     return (
         <>
         <Container>
             <ColoredContainer color="white">
                 <P>Que Recherchez-vous ?</P>
-                <Input type="text" placeholder="Rechercher un soin, un praticien, un établissement..."
-                    value={search}
-                    onChange={handleSearch} 
-                />
-                <A href="/establishments-list"><Button customAttribute="relative" color='#546A7B' type="submit">Rechercher</Button></A>
+                <Form onSubmit={handleSearchSubmit}>
+                    <Input type="text" placeholder="Rechercher un soin, un praticien, un établissement..."
+                        value={searchValue}
+                        onChange={handleSearchChange}
+                    />
+                    <Button customAttribute="relative" color='#546A7B' type="submit">Rechercher</Button>
+                </Form>
             </ColoredContainer>
-        <ColoredContainer color="#e5c09d">
-            <P_Hero color="white">Votre Rendez-vous bien-être, en un clic !</P_Hero>
-        </ColoredContainer>
-        {results.map((result, index) => {
-            return (
-                <div key={index}>
-                    <p>{result.name}</p>
-                </div>
-            )
-            })
-        }
+            <ColoredContainer color="#e5c09d">
+                <P_Hero color="white">Votre Rendez-vous bien-être, en un clic !</P_Hero>
+            </ColoredContainer>
         </Container>
         
         <Section color="white">

@@ -14,6 +14,7 @@ import Head from "./components/template/NavBar/Head";
 import UserPage from "./components/UserPage";
 import EstablishmentList from "./components/EstablishmentList";
 import EstablishmentsDetails from "./components/EstablishmentsDetails";
+import About from "./components/About";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -23,7 +24,8 @@ const router = createBrowserRouter([
   { path: "/connexion", element: <Connexion />},
   { path: "/user", element: <UserPage />},
   { path: "establishments-list", element: <EstablishmentList />},
-  { path: "establishments/one/:id", element: <EstablishmentsDetails />}
+  { path: "establishments/one/:id", element: <EstablishmentsDetails />},
+  { path: "/about", element: <About />}
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

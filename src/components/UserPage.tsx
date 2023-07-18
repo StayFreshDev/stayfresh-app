@@ -75,7 +75,7 @@ const UserPage: React.FC = () => {
               <Input type="text" name="email" id="email" placeholder="Email" value={user.mail}  />
             </UserForm>
           ) : (
-            <div>Chargement...</div>
+            <div>Connectez-vous pour voir vos rendez-vous et modifier vos informations</div>
           )}
           <LogoutButton onClick={handleLogout}>Déconnexion</LogoutButton>
         </List>

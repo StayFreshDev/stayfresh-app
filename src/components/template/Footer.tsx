@@ -16,21 +16,21 @@ const Footer = () => {
                     <div className="footer__links">
                         <div className="footer__link--wrapper">
                             <div className="footer__link--items">
-                                <a href='/'>Qui sommes-nous?</a>
+                                <a href='/about'>Qui sommes-nous?</a>
                                
                             </div>
                             <div className="footer__link--items">
-                                <a href='/'>Types d'établissement</a>
+                                <a href='/establishments-list'>Types d'établissement</a>
                                 
                             </div>
                         </div>
                         <div className="footer__link--wrapper">
                             <div className="footer__link--items">
-                                <a href='/'>Mes rendez-vous</a>
+                                <a href='/user'>Mes rendez-vous</a>
                                 
                             </div>
                             <div className="footer__link--items">
-                                <a href='/'>Connexion</a>
+                                <a href='/connexion'>Connexion</a>
                             </div>
                         </div>
                     </div>

@@ -66,4 +66,35 @@ export const List = styled.div`
         width: 100%;
     }
     `
-  
+export const AboutContainer = styled.div`
+width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+gap: 20px;
+
+@media (max-width: 768px) {
+    flex-direction: column;
+}
+`
+
+export const AboutText = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    `
+
+export const AboutTextContent = styled.div`
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    `
