@@ -1,8 +1,8 @@
 import { useLocation } from 'react-router-dom';
 import { EstablishmentInfo } from './data/establishment';
 import { ContainerLong, List } from './styles/molecules/Containers';
-import { H2, P } from './styles/atoms';
-import { Card, Left, Right, Image } from './styles/molecules';
+import { Button, H2, Label, P } from './styles/atoms';
+import { Card, Left, Right, Image, Input, Form } from './styles/molecules';
 import React, { useState } from 'react';
 
 const EstablishmentsDetails: React.FC = () => {
@@ -17,6 +17,13 @@ const EstablishmentsDetails: React.FC = () => {
   const [date, setDate] = useState('');
   const [duration, setDuration] = useState('');
 
+  const timeOptions = [
+    '15 minutes',
+    '30 minutes',
+    '45 minutes',
+    '1 heure',
+  ];
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -26,6 +33,7 @@ const EstablishmentsDetails: React.FC = () => {
       date,
       duration
     };
+
 
     fetch('http://51.254.118.50/create', {
       method: 'POST',
@@ -61,34 +69,30 @@ const EstablishmentsDetails: React.FC = () => {
             </Right>
           </Card>
       </List>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
 
-      <label htmlFor="userId">User ID:</label>
-      <input
-        type="text"
-        id="userId"
-        value={userId}
-        onChange={e => setUserId(e.target.value)}
-      />
-
-      <label htmlFor="date">Date:</label>
-      <input
+      <Label htmlFor="date">Date:</Label>
+      <Input
         type="date"
         id="date"
         value={date}
         onChange={e => setDate(e.target.value)}
       />
 
-      <label htmlFor="duration">Durée:</label>
-      <input
-        type="text"
+      <Label htmlFor="duration">Durée:</Label>
+      <select
         id="duration"
         value={duration}
         onChange={e => setDuration(e.target.value)}
-      />
+      >
+        <option value="">-- Choisissez une durée --</option>
+        {timeOptions.map(option => (
+          <option key={option} value={option}>{option}</option>
+        ))}
+      </select>
 
-      <button type="submit">Prendre rendez-vous</button>
-    </form>
+      <Button color='#000' customAttribute='' type="submit">Prendre rendez-vous</Button>
+    </Form>
     </ContainerLong>
       
       
