@@ -26,7 +26,7 @@ function EtablissementsListe() {
             // Si un terme de recherche est présent, filtrez les résultats
             if (searchValue) {
                 const filteredResults = data.filter((establishment: Establishment) =>
-                    establishment.establishment_name.includes(searchValue));
+                    establishment.establishment_name.toLowerCase().includes(searchValue || ""));
                 setResults(filteredResults);
             }
             // Sinon, affichez tous les établissements
